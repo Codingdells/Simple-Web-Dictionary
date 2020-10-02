@@ -1,0 +1,20 @@
+{% extends "apidict/base.html" %}
+{% load crispy_forms_tags %}
+{% block content%} 
+<div class="content-section">
+        <form action="{% url 'results' %}" method="POST" class="box">
+            {% csrf_token %}
+            <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Word Search</legend>
+            {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-success" type="submit"> Search</button>
+            </div>
+            <div class="suggestion-wrap">
+                <a href="#">Todays-Word</a>
+                <a href="#">Random</a>
+            </div>
+        </form>
+</div>
+{% endblock %} 
