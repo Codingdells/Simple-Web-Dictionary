@@ -16,10 +16,11 @@ def results(request):
     if request.method == 'POST':
         form = WordForm(request.POST)
         if form.is_valid():
-            word = form.cleaned_data['word']
+            word = form.cleaned_data['word'].lower()
     else:
         form = WordForm()
     # Querying the scrapper
+    # token = os.environ.get('owlbot_token') #probably does not allow any other form
     headers = {
         'Authorization': 'Token 6b192155a82dc6d94d6cf06dd2b913eaed0daca7',
     }
