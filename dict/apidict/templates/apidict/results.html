@@ -1,13 +1,26 @@
 {% extends "apidict/base.html"%}
 {% block content%}
-<h3>{{ word }}</h3>
+<h3 class="display-4 bold">{{ word }}</h3>
+{% if results %}
 {% for te in results %}
-<article class="media content-section">
+<div class="jumbotron jumbotron-fluid try width">
+    <div class="container">
+        <p>Grammatical Type: {{te.type}}</p>
+        <p class="lead"><strong> Word Definition: </strong> {{ te.definition }}</p>
+        <p><small>In A Sentence:</small> {{ te.example }}</p>
+    </div>
+</div>
+{% endfor %}
+{% else %}
+<p>Cant find the word you search for</p>
+{% endif %}
+{% endblock %}
+
+
+<!-- <article class="media content-section">
     <div class="media-body">
-        <p><strong>Grammatical Type:</strong> {{te.type}}</p>
+        <p></p>
         <p class="article-content"><strong>Word Definition:</strong> {{ te.definition }}</p>
         <p class="article-content"><small>In A Sentence:</small> {{ te.example }}</p>
     </div>
-</article>
-{% endfor %}
-{% endblock %}
+</article> -->

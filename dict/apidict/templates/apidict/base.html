@@ -7,9 +7,42 @@
     <title>Word Lookup</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- <link rel="stylesheet" href="{% static 'apidict/main.css' %}"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+    </head>
+    <style>
+        body {
+            font-family: 'Noto Sans', sans-serif;
+            font-size: 20px;
+        }
+        .try{
+            background-color: rgb(247, 247, 247);
+            border-radius: 10px;
+        }
+        .bold{
+            font-size: 40px;
+            font-weight: 500;
+            margin-top: 20px;
+        }
+
+        .box{
+            align-items: center;
+        }
+
+        /* .width{
+            width: 75%;
+            font-size: 20px;
+            margin-top: 20px;
+        } */
+
+        /* .cent{
+            background-color: #557b9e;
+            justify-content: center;
+            padding: 20px;
+        } */
+    </style>
 </head>
 <body>
-    <div class="parent">
+    <div class="container cent">
     {% block content %}
     {% endblock %}
     </div>
