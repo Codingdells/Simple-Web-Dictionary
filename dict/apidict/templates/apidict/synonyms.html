@@ -1,0 +1,16 @@
+{% extends "apidict/base.html"%}
+{% block content%}
+<h3 class="display-4 bold">{{ word }}</h3>
+<a href="{% url 'index' %}" class="btn btn-sm">Back to Definitions</a>
+{% if synonyms %}
+{% for te in synonyms %}
+<div class="jumbotron jumbotron-fluid syn ">
+    <div class="container">
+        <p>{{te.text}}</p>
+    </div>
+</div>
+{% endfor %}
+{% else %}
+<p>Cant find the word you search for</p>
+{% endif %}
+{% endblock %}

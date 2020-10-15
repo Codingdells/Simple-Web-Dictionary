@@ -1,5 +1,6 @@
 {% extends "apidict/base.html"%}
 {% block content%}
+<a href="{% url 'synonyms' %}" class="btn mt-4 btn-sm ">Synonyms</a>
 <h3 class="display-4 bold">{{ word }}</h3>
 {% if results %}
 {% for te in results %}
@@ -14,6 +15,7 @@
 {% else %}
 <p>Cant find the word you search for</p>
 {% endif %}
+<a href="{% url 'index' %}" class="btn">Back Home</a>
 {% endblock %}
 
 
